@@ -34,8 +34,24 @@ if(isset($_POST['category'])){
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="main.css">
 </head>
-<body>
+<style>
+    .container{
+        background-color: #37517E;
+        color:white;
+    }
+    .container h2{
+        color: white;
+    }
+    .container table{
+        color: white;
+    }
 
+<<<<<<< HEAD
+=======
+
+</style>
+<body>
+>>>>>>> f9574af92b715df8cea5fde69c18f1d88a38ca3a
 <?php include('user_navbar.php');?>
 <?php include('sidebar.php');?>
 

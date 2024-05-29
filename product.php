@@ -35,11 +35,29 @@ if (empty($_SESSION['user'])){
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="main.css">
 </head>
+<style>
+    .container{
+        background-color: #37517E;
+        color:white;
+    }
+    .container h2{
+        color: white;
+    }
+    .container table{
+        color: white;
+    }
+
+
+
+</style>
 <body>
 
 <?php include('user_navbar.php');?>
 <?php include('sidebar.php');?>
+<<<<<<< HEAD
 
+=======
+>>>>>>> f9574af92b715df8cea5fde69c18f1d88a38ca3a
 <div class="container user-info rounded shadow p-3 my-2">
     <h2 class="text-center mb-2">Product Table</h2>
     <div class="table-responsive text-center">
@@ -102,6 +120,8 @@ if (empty($_SESSION['user'])){
         <a href="addproduct.php" class="btn btn-primary">Add Product</a>
     </div>
 </div>
+
+
  
 <!-- Bootstrap JS and dependencies -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
