@@ -37,7 +37,8 @@ if (empty($_SESSION['user'])){
 </head>
 <body>
 
-<?php include('navbar.php');?>
+<?php include('user_navbar.php');?>
+<?php include('sidebar.php');?>
 
 <div class="container user-info rounded shadow p-3 my-2">
     <h2 class="text-center mb-2">Product Table</h2>

@@ -43,7 +43,7 @@ try{
 function viewdata($admin_id){
 try{
     $con = $this->opencon();
-        $query = $con->prepare("SELECT admin.admin_id,admin.firstname, admin.lastname, admin.user WHERE admin.admin_id = ?");
+        $query = $con->prepare("SELECT admin.admin_id, admin.firstname, admin.lastname, admin.user, admin.profile_picture WHERE admin.admin_id = ?");
         $query->execute([$admin_id]);
         return $query->fetch();
     }catch(PDOException $e){
@@ -86,4 +86,15 @@ function addProduct($name, $type, $stock, $price, $expiration, $picture)
             FROM product
             INNER JOIN category ON product.category_id = category.category_id;")->fetchAll();
         }
+        function signupCustomer($firstname, $lastname, $contact,$profilePicture)
+    {
+        $con = $this->opencon();
+        // Save user data along with profile picture path to the database
+        $con->prepare("INSERT INTO customer (firstname,lastname, contact_number, profile_pic) VALUES (?,?,?,?)")->execute([$firstname, $lastname, $contact,$profilePicture]);
+        return $con->lastInsertId();
+        }
+        function customer() {
+            $con = $this->opencon();
+    return $con->query("SELECT customer.customer_id, customer.firstname, customer.lastname, customer.contact_number, customer.profile_pic from customer")->fetchAll();
+}
 }
